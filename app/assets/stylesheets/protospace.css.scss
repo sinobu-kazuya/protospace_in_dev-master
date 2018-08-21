@@ -303,6 +303,7 @@ body {
     overflow: hidden;
     font-size: 1.2rem;
     padding: 10px 0;
+  }
 
     .proto-user {
       float: left;
@@ -311,7 +312,6 @@ body {
     .proto-posted {
       float: right;
     }
-  }
 
   .btn {
     font-size: 1rem;
@@ -620,7 +620,7 @@ body {
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
-
+}
 
 
 .alert--success {
