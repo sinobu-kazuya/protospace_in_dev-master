@@ -16,6 +16,10 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'sqlite3', group: [:development, :test]
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
+
 
 group :development, :test do
   gem 'byebug'
@@ -25,3 +29,5 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+ruby "2.3.4"
