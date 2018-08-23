@@ -1,0 +1,22 @@
+.container.proto-page
+  %header.row.user-nav
+    .col-md-6
+      .col-md-6__textbox
+        .textbox--edit
+          =link_to "Edit", '#'
+        .textbox--delete
+          =link_to "Delete", "/prototypes/#{prototype.id}",method: :delete
+        .textbox--like
+          Like
+      .media
+        .media-left
+          = link_to user_path(@prototype.user) do
+            = image_tag(@prototype.user.avatar.thumb, alt: "profile_photo", class: "media-object", style: "width: 64px; height: 64px;")
+        .media-body
+          %h4#top-aligned-media.media-heading
+            = @prototype.title
+          .proto-user
+            by
+            = link_to "#{@prototype.user.name}", user_path(@prototype.user)
+            .degree
+              = @prototype.user.position
