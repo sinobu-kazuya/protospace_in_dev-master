@@ -323,7 +323,37 @@ body {
 
 .proto-page {
   .user-nav {
+    .col-md-6 {
+      width: 100%;
     padding: 50px 0;
+    .col-md-6__textbox {
+      display: flex;
+      justify-content: center;
+      align-items: right;
+      float: right;
+        .textbox--edit {
+          width: 50px;
+          text-align: center;
+          padding: 0 10px;
+          border: 1px solid $border-color;
+          margin: 0 10px;
+        }
+        .textbox--delete {
+          width: 60px;
+          text-align: center;
+          padding: 0 10px;
+          border: 1px solid $border-color;
+          margin: 0 10px;
+        }
+        .textbox--like {
+          width: 50px;
+          text-align: center;
+          padding: 0 10px;
+          border: 1px solid $border-color;
+          margin: 0 10px;
+        }
+      }
+    }
 
     .media-object {
       border-radius: 50%;

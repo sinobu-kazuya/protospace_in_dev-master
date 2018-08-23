@@ -20,6 +20,14 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def destroy
+    prototype = Prototype.find(params[:id])
+    if current_user.id == prototype.user_id
+      prototype.destroy
+    end
   end
 
   private
