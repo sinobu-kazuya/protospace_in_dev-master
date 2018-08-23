@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.8'
 gem 'mysql2', '~> 0.3.18'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -19,6 +19,8 @@ gem 'rmagick'
 gem 'sqlite3', group: [:development, :test]
 gem 'pg','~> 0.19.0', group: :production
 gem 'rails_12factor', group: :production
+gem 'thin', group: :production
+
 
 
 group :development, :test do
