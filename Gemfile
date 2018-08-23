@@ -17,7 +17,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'sqlite3', group: [:development, :test]
-gem 'pg', group: :production
+gem 'pg','~> 0.19.0', group: :production
 gem 'rails_12factor', group: :production
 
 
@@ -30,4 +30,4 @@ group :development do
   gem 'spring'
 end
 
-ruby "2.3.4"
+
