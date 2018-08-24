@@ -20,7 +20,7 @@ gem 'sqlite3', group: [:development, :test]
 gem 'pg','~> 0.19.0', group: :production
 gem 'rails_12factor', group: :production
 gem 'thin', group: :production
-
+gem 'kaminari'
 
 
 group :development, :test do
