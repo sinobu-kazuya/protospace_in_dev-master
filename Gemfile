@@ -21,7 +21,7 @@ gem 'pg','~> 0.19.0', group: :production
 gem 'rails_12factor', group: :production
 gem 'thin', group: :production
 gem 'kaminari'
-
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
