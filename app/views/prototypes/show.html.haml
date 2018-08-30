@@ -45,3 +45,50 @@
         %a{href: "#", class: "btn btn-default"} iPad
       %li
         %a{href: "#", class: "btn btn-default"} wireframe
+
+.row.proto-comments
+  %h4.col-md-12
+    Comments
+    %span#comments_count.num
+      prototype.comment.count
+      - if @comments
+        - @comments.each do |comment|
+          / = link_to comment.user.name, "/users/#{comment.user_id}"
+          .col-md-8
+            #comments
+              .media
+                .media-left
+                  %a{:href => "/users/:id"}
+                    %img.media-object{:alt => "64x64", "data-holder" => "{\"rendered\":\"true\"}", "data-src" => "holder.js/64x64", :style => "width: 64px; height: 64px;"}/
+                .media-body
+                  %h4.top-aligned-media.media-heading
+                    %strong
+                      = comment.user.name
+                      = link_to "削除", prototype_comment_path(@prototype, comment), method: :delete
+                    %p
+                      = comment.text
+
+  - if user_signed_in?
+    .form-inlign{:role => "form"}
+      = form_tag("/prototypes/#{@prototype.id}/comments", method: :post) do
+        %form.new_comment.new_comment{"accept-charset" => "UTF-8", :action => "/comments", "data-remote" => "true", :method => "post"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+          %h4 Write a comment
+          .row
+            .form-group.col-md-10
+              %textarea.comment_field.form-control{:name => "text", :placeholder => "Input comment", :required => "required", :rows => "3"}
+              %input.comment_user_id{:name => "comment[user_id]", :type => "hidden", :value => "262"}/
+              %input.comment_prototype_id{:name => "comment[prototype_id]", :type => "hidden", :value => "42"}/
+            .form-group.col-md-2
+              %input.btn.btn-primary{:name => "commit", :type => "submit", :value => "comment"}/
+
+  - else
+    .form-inlign{:role => "form"}
+      %form.new_comment.new_comment{"accept-charset" => "UTF-8", :action => "/comments", "data-remote" => "true", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %h4 Write a comment
+        .row
+          .form-group.col-md-10
+            %textarea.comment_field.form-control{:disabled => "disabled", :name => "comment[text]", :placeholder => "Sign in to put your comment", :rows => "3"}
+          .form-group.col-md-2
+            %input.btn.btn-primary{:disabled => "disabled", :name => "commit", :type => "submit", :value => "comment"}/
