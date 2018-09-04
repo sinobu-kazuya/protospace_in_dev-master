@@ -22,7 +22,7 @@ $(function(){
   }
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
-    console.log(this)
+    // console.log(this)
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
@@ -34,12 +34,15 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      // console.log(data)
       var html = buildHTML(data);
-      $('#comment_list').append(html)
-      $('#textarea').val('')
+      $('.row').append(html);
+      // $('.comment_field form-control').remove();
+      $('.comment_field form-control').prop('disabled', false);
     })
     .fail(function(){
       alert('error');
     })
-  })
-})
+     // return false;
+  });
+});

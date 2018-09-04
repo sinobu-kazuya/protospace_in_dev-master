@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
   def create
+    # binding.pry
     @comment = Comment.create(text: params[:text], prototype_id: params[:prototype_id], user_id: current_user.id)
     respond_to do |format|
-      format.html { redirect_to prototype_path(params[:prototype_id])  }
+      format.html { redirect_to prototype_path(params[:prototype_id]) }
       format.json
     end
   end

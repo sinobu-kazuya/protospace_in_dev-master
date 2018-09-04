@@ -46,29 +46,6 @@
       %li
         %a{href: "#", class: "btn btn-default"} wireframe
 
-.row.proto-comments
-  %h4.col-md-12
-    Comments
-    %span#comments_count.num
-      prototype.comment.count
-      - if @comments
-        - @comments.each do |comment|
-          / = link_to comment.user.name, "/users/#{comment.user_id}"
-          .col-md-8
-            #comments
-              .media
-                .media-left
-                  %a{:href => "/users/:id"}
-                    %img.media-object
-                      = image_tag comment.user.avatar.url, alt: "64x64", "data-holder": "{\"rendered\":\"true\"}",style: "ßwidth: 64px; height: 64px;"
-                .media-body
-                  %h4.top-aligned-media.media-heading
-                    %strong
-                      = comment.user.name
-                      = link_to "削除", prototype_comment_path(@prototype, comment), method: :delete
-                    %p
-                      = comment.text
-
   - if user_signed_in?
     .form-inlign{:role => "form"}
       = form_tag("/prototypes/#{@prototype.id}/comments", method: :post, id: "new_comment") do
@@ -82,6 +59,28 @@
               %input.comment_prototype_id{:name => "comment[prototype_id]", :type => "hidden", :value => "42"}/
             .form-group.col-md-2
               %input.btn.btn-primary{:name => "commit", :type => "submit", :value => "comment"}/
+            .row.proto-comments
+              %h4.col-md-12
+                Comments
+                %span#comments_count.num
+                  prototype.comment.count
+                  - if @comments
+                    - @comments.each do |comment|
+                      / = link_to comment.user.name, "/users/#{comment.user_id}"
+                      .col-md-8
+                        #comments
+                          .media
+                            .media-left
+                              %a{:href => "/users/:id"}
+                                %img.media-object
+                                  = image_tag comment.user.avatar.url, alt: "64x64", "data-holder": "{\"rendered\":\"true\"}",style: "ßwidth: 64px; height: 64px;"
+                            .media-body
+                              %h4.top-aligned-media.media-heading
+                                %strong
+                                  = comment.user.name
+                                  = link_to "削除", prototype_comment_path(@prototype, comment), method: :delete
+                                %p
+                                  = comment.text
 
   - else
     .form-inlign{:role => "form"}
