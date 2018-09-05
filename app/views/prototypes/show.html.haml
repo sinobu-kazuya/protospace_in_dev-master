@@ -63,7 +63,6 @@
               %h4.col-md-12
                 Comments
                 %span#comments_count.num
-                  prototype.comment.count
                   - if @comments
                     - @comments.each do |comment|
                       / = link_to comment.user.name, "/users/#{comment.user_id}"
