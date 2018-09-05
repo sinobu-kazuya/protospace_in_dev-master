@@ -7,9 +7,9 @@
     .row
       %ul.nav.nav-pills.col-lg-11
         %li.btn-default.btn-popular
-          = link_to "Popular", "#"
+          = link_to "Popular", popular_index_path, method: :get, class: 'popular_btn'
         %li.btn-default.btn-popular
-          = link_to "Newest", "#"
+          = link_to "Newest", newest_index_path, method: :get, class: 'newest_btn'
       = link_to "VIEW TAGS", "#", class: "btn btn-default col-lg-1"
 
 .container.proto-list
