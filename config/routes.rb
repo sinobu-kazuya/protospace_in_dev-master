@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
   end
 
+  resources :newest, only: :index
+  resources :popular, only: :index
+
   post   '/like/:prototype_id' => 'likes#like',   as: 'like'
   delete '/like/:prototype_id' => 'likes#unlike', as: 'unlike'
 
