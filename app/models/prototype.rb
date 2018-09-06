@@ -1,7 +1,12 @@
 class Prototype < ActiveRecord::Base
   belongs_to :user
   has_many :captured_images, dependent: :destroy
+<<<<<<< HEAD
   has_many :comments
+=======
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
+>>>>>>> master
 
   accepts_nested_attributes_for :captured_images, reject_if: :reject_sub_images
 
