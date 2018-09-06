@@ -7,7 +7,7 @@
         .textbox--delete
           =link_to "Delete", "/prototypes/#{prototype.id}",method: :delete
         .textbox--like
-          Like
+          = render 'likes/like_links', prototype: prototype
       .media
         .media-left
           = link_to user_path(@prototype.user) do

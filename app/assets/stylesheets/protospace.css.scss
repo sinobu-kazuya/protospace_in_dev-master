@@ -345,13 +345,6 @@ body {
           border: 1px solid $border-color;
           margin: 0 10px;
         }
-        .textbox--like {
-          width: 50px;
-          text-align: center;
-          padding: 0 10px;
-          border: 1px solid $border-color;
-          margin: 0 10px;
-        }
       }
     }
 
@@ -642,6 +635,25 @@ body {
   font-weight: 200;
 }
 
+// .row.proto-comments{
+//   .col-md-12{
+//     #comments_count.num{
+//       .col-md-8{
+//         #comments{
+//           width: 500px;
+//           height: 900px;
+//           background-color: black;
+//           .media{
+//             width: 500px;
+//             height: 500px;
+//             margin: 0 auto;
+//             background-color: yellow;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 /* -- flash messages ------------------------------------ */
 .alert {
