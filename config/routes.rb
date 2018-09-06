@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'prototypes#index'
+<<<<<<< HEAD
+  resources :prototypes, only: [:index, :new, :create, :show, :destroy] do
+    resources :comments,only: [:create, :destroy]
+  end
+  resources :users, only: [:show, :edit, :update]
+=======
 
   resources :prototypes, only: [:index, :new, :create, :show, :destroy] do
   end
@@ -10,4 +16,5 @@ Rails.application.routes.draw do
   post   '/like/:prototype_id' => 'likes#like',   as: 'like'
   delete '/like/:prototype_id' => 'likes#unlike', as: 'unlike'
 
+>>>>>>> master
 end
