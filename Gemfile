@@ -16,7 +16,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'sqlite3', group: [:development, :test]
+gem 'sqlite3', group: :production
 gem 'pg','~> 0.19.0', group: :production
 gem 'rails_12factor', group: :production
 gem 'thin', group: :production
