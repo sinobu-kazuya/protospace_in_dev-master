@@ -4,11 +4,15 @@ class LikesController < ApplicationController
   def like
     like = current_user.likes.new(prototype_id: @prototype.id)
     like.save
+    @likes = Like.where(prototype_id: params[:prototype_id])
+    @prototypes = Prototype.all
   end
 
   def unlike
     like = current_user.likes.find_by(prototype_id: @prototype.id)
     like.destroy
+    @likes = Like.where(prototype_id: params[:prototype_id])
+    @prototypes = Prototype.all
   end
 
   private
