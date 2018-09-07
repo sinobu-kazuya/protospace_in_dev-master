@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20180827001916) do
-=======
 ActiveRecord::Schema.define(version: 20180828001447) do
->>>>>>> master
 
   create_table "captured_images", force: :cascade do |t|
     t.string  "content",      limit: 255
@@ -25,26 +21,24 @@ ActiveRecord::Schema.define(version: 20180828001447) do
 
   add_index "captured_images", ["prototype_id"], name: "index_captured_images_on_prototype_id", using: :btree
 
-<<<<<<< HEAD
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
     t.integer  "prototype_id", limit: 4
     t.text     "text",         limit: 65535
-=======
-  create_table "likes", force: :cascade do |t|
-    t.integer  "user_id",      limit: 4, null: false
-    t.integer  "prototype_id", limit: 4, null: false
->>>>>>> master
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4, null: false
+    t.integer  "prototype_id", limit: 4, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   add_index "likes", ["prototype_id"], name: "fk_rails_8847d87628", using: :btree
   add_index "likes", ["user_id"], name: "fk_rails_1e09b5dabf", using: :btree
 
->>>>>>> master
   create_table "prototypes", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.string   "catch_copy", limit: 255
