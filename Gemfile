@@ -20,11 +20,11 @@ gem 'rails_12factor', group: :production
 gem 'thin', group: :production
 gem 'kaminari'
 gem 'font-awesome-rails'
+gem 'pg', '~> 0.19.0', group: :production
 
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
-  gem 'pg','~> 0.19.0'
 end
 
 group :development do
