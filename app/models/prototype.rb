@@ -15,6 +15,10 @@ class Prototype < ActiveRecord::Base
             :concept,
             presence: true
 
+  def like_user(user_id)
+   likes.find_by(user_id: user_id)
+  end
+
   def reject_sub_images(attributed)
     attributed['content'].blank?
   end
