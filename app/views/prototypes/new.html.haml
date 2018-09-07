@@ -15,6 +15,9 @@
               %img
               = image.file_field :content, required: true
               = image.hidden_field :status, value: "main"
+
+
+
         .col-md-12
           %h4 Sub Thumbnails
           %ul.proto-sub-list.list-group
@@ -33,4 +36,4 @@
           %h4 Concept
           = f.text_area :concept, require: true, placeholder: "Input Concept"
       .row.text-center.proto-btn
-        = f.submit "PUBLISH", id: "button", class: "btn btn-lg btn-primary btn-block"
+        = f.submit "UPDATE", id: "button", class: "btn btn-lg btn-primary btn-block"
