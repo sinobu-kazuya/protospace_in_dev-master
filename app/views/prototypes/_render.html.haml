@@ -3,7 +3,7 @@
     .col-md-6
       .col-md-6__textbox
         .textbox--edit
-          =link_to "Edit", '#'
+          =link_to "Edit", edit_prototype_path
         .textbox--delete
           =link_to "Delete", "/prototypes/#{prototype.id}",method: :delete
         .textbox--like

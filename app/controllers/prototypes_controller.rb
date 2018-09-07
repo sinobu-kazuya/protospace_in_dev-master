@@ -1,5 +1,5 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: :show
+  before_action :set_prototype, only: [:show, :edit]
 
   def index
     @prototypes = Prototype.all.page(params[:page]).per(8)
@@ -19,8 +19,20 @@ class PrototypesController < ApplicationController
      end
   end
 
+  def edit
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def update
+    prototype = Prototype.find(params[:id])
+    if current_user.id == prototype.user_id
+      prototype.update(prototype_params)
+    end
+  end
+
   def show
     @prototype = Prototype.find(params[:id])
+    @comments = @prototype.comments.includes(:user)
   end
 
   def destroy

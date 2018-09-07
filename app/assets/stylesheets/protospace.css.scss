@@ -136,6 +136,9 @@ body {
   box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
+  .img{
+    display: none;
+  }
 }
 
 .btn-group .btn+.btn, .btn-group .btn+.btn-group, .btn-group .btn-group+.btn, .btn-group .btn-group+.btn-group {
@@ -271,13 +274,14 @@ body {
 }
 
 .jumbotron {
-  background-image: image-url("header_bg.png");
+  background-image: image-url("header_bg.png") !important;
   background-position:  center 92px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size:  100% auto;
   padding: 80px 0;
   margin-bottom: 0;
+
 }
 
 .filter-nav {
@@ -441,6 +445,13 @@ body {
     height: 500px;
     position: relative;
     margin-bottom: 20px;
+    .main_image{
+        position: absolute;
+        left: 65px;
+        top: 25px;
+        width: 600px;
+        height: 450px;
+      }
 
     input {
       position: absolute;
@@ -463,7 +474,34 @@ body {
       background: image-url("noimage.png") #fff no-repeat center center;
       height: 200px;
       position: relative;
-
+      .main_image{
+        position: absolute;
+        left: 43px;
+        top: 58px;
+        height: 90px;
+        width: 130px;
+      }
+      .sub_image_1{
+        position: absolute;
+        left: 43px;
+        top: 58px;
+        height: 90px;
+        width: 130px;
+      }
+      .sub_image_2{
+        position: absolute;
+        left: 43px;
+        top: 58px;
+        height: 90px;
+        width: 130px;
+      }
+      .sub_image_3{
+        position: absolute;
+        left: 43px;
+        top: 58px;
+        height: 90px;
+        width: 130px;
+      }
       input {
         position: absolute;
         left: 0;
@@ -635,6 +673,25 @@ body {
   font-weight: 200;
 }
 
+// .row.proto-comments{
+//   .col-md-12{
+//     #comments_count.num{
+//       .col-md-8{
+//         #comments{
+//           width: 500px;
+//           height: 900px;
+//           background-color: black;
+//           .media{
+//             width: 500px;
+//             height: 500px;
+//             margin: 0 auto;
+//             background-color: yellow;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 /* -- flash messages ------------------------------------ */
 .alert {
