@@ -16,8 +16,6 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
-gem 'sqlite3', group: [:development, :test]
-gem 'pg','~> 0.19.0', group: :production
 gem 'rails_12factor', group: :production
 gem 'thin', group: :production
 gem 'kaminari'
@@ -25,6 +23,8 @@ gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
+  gem 'sqlite3'
+  gem 'pg','~> 0.19.0'
 end
 
 group :development do
@@ -32,4 +32,6 @@ group :development do
   gem 'spring'
 end
 
-
+group :production do
+  gem 'unicorn'
+end
