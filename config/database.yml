@@ -36,11 +36,10 @@ development:
 # Configure Using Gemfile
 # gem 'pg'
 #
-production:
- <<: *default
- adapter: postgresql
- encoding: unicode
- pool: 5
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
 # Warning: The database defined as "test" will be erased and
